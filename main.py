@@ -16,7 +16,7 @@ def m(m):
         if m.chat.type == 'private':
             banlist = redis.sismember('banlist_pmbot', '{}'.format(m.from_user.id))
             if m.text == '/start' or m.text == '/help':
-                bot.send_message(m.chat.id, 'پیام خودتونو ارسال کنید\n😊)
+                bot.send_message(m.chat.id, 'پیام خود را ارسال نمایید✉️')
                 redis.sadd('member_pmbot','{}'.format(m.from_user.id))
             if str(m.from_user.id) not in admin:
                 if str(banlist) == 'False':
