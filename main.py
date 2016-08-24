@@ -16,30 +16,30 @@ def m(m):
         if m.chat.type == 'private':
             banlist = redis.sismember('banlist_pmbot', '{}'.format(m.from_user.id))
             if m.text == '/start' or m.text == '/help':
-                bot.send_message(m.chat.id, 'پیام خودتونو ارسال کنید')
+                bot.send_message(m.chat.id, 'پیام خودتونو ارسال کنید\n @taylor_team')
                 redis.sadd('member_pmbot','{}'.format(m.from_user.id))
             if str(m.from_user.id) not in admin:
                 if str(banlist) == 'False':
                     if m.photo:
                         bot.forward_message(chat_id=admin, from_chat_id=m.chat.id, message_id=m.message_id)
-                        bot.send_message(m.chat.id, 'پیام شما ارسال شد✉️')
+                        bot.send_message(m.chat.id, 'پیام شما ارسال شد')
                     if m.text:
                         bot.forward_message(chat_id=admin, from_chat_id=m.chat.id, message_id=m.message_id)
-                        bot.send_message(m.chat.id, 'پیام شما ارسال شد✉️')
+                        bot.send_message(m.chat.id, 'پیام شما ارسال شد')
                     if m.document:
                         file_id = m.document.file_id
                         bot.forward_message(chat_id=admin, from_chat_id=m.chat.id, message_id=m.message_id)
-                        bot.send_message(m.chat.id, 'پیام شما ارسال شد✉️')
+                        bot.send_message(m.chat.id, 'پیام شما ارسال شد')
                     if m.sticker:
                         bot.forward_message(chat_id=admin, from_chat_id=m.chat.id, message_id=m.message_id)
-                        bot.send_message(m.chat.id, 'پیام شما ارسال شد✉'️)
+                        bot.send_message(m.chat.id, 'پیام شما ارسال شد')
                     if m.audio:
                         file_id = m.audio.file_id
                         bot.forward_message(chat_id=admin, from_chat_id=m.chat.id, message_id=m.message_id)
-                        bot.send_message(m.chat.id, 'پیام شما ارسال شد✉️')
+                        bot.send_message(m.chat.id, 'پیام شما ارسال شد')
                     if m.contact:
                         bot.forward_message(chat_id=admin, from_chat_id=m.chat.id, message_id=m.message_id)
-                        bot.send_message(m.chat.id, 'پیام شما ارسال شد✉️')
+                        bot.send_message(m.chat.id, 'پیام شما ارسال شد')
         if str(m.from_user.id) == admin:
             if m.reply_to_message:
                 if not m.text == '/ban':
@@ -49,49 +49,49 @@ def m(m):
                                 cid = m.reply_to_message.forward_from.id
                                 text = m.text
                                 bot.send_message(cid,text)
-                                bot.send_message(m.chat.id, 'متن شماارسال شد✉️')
+                                bot.send_message(m.chat.id, 'ارسال شد')
                             if m.photo:
                                 cid = m.reply_to_message.forward_from.id
                                 photo = m.photo[2].file_id
                                 bot.send_photo(cid,photo)
-                                bot.send_message(m.chat.id, 'تصویر شماارسال شد✉️')
+                                bot.send_message(m.chat.id, 'ارسال شد')
                             if m.sticker:
                                 cid = m.reply_to_message.forward_from.id
                                 sticker = m.sticker.file_id
                                 bot.send_sticker(cid, sticker)
-                                bot.send_message(m.chat.id, 'استیکر شماارسال شد✉️')
+                                bot.send_message(m.chat.id, 'ارسال شد')
                         if m.reply_to_message.photo:
                             if m.text:
                                 cid = m.reply_to_message.forward_from.id
                                 text = m.text
                                 bot.send_message(cid,text)
-                                bot.send_message(m.chat.id, 'متن شماارسال شد✉️')
+                                bot.send_message(m.chat.id, 'ارسال شد')
                             if m.photo:
                                 cid = m.reply_to_message.forward_from.id
                                 photo = m.photo[2].file_id
                                 bot.send_photo(cid,photo)
-                                bot.send_message(m.chat.id, 'تصویر شماارسال شد✉️')
+                                bot.send_message(m.chat.id, 'ارسال شد')
                             if m.sticker:
                                 cid = m.reply_to_message.forward_from.id
                                 sticker = m.sticker.file_id
                                 bot.send_sticker(cid, sticker)
-                                bot.send_message(m.chat.id, 'استیکر شماارسال شد✉️')
+                                bot.send_message(m.chat.id, 'ارسال شد')
                         if m.reply_to_message.contact:
                             if m.text:
                                 cid = m.reply_to_message.forward_from.id
                                 text = m.text
                                 bot.send_message(cid,text)
-                                bot.send_message(m.chat.id, 'متن شماارسال شد✉️')
+                                bot.send_message(m.chat.id, 'ارسال شد')
                             if m.photo:
                                 cid = m.reply_to_message.forward_from.id
                                 photo = m.photo[2].file_id
                                 bot.send_photo(cid,photo)
-                                bot.send_message(m.chat.id, 'تصویر شماارسال شد✉️')
+                                bot.send_message(m.chat.id, 'ارسال شد')
                             if m.sticker:
                                 cid = m.reply_to_message.forward_from.id
                                 sticker = m.sticker.file_id
                                 bot.send_sticker(cid, sticker)
-                                bot.send_message(m.chat.id, 'استیکر شماارسال شد✉️')
+                                bot.send_message(m.chat.id, 'ارسال شد')
                         if m.reply_to_message.sticker:
                             if m.text:
                                 cid = m.reply_to_message.forward_from.id
